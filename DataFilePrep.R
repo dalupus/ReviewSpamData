@@ -140,3 +140,4 @@ fulldf$type <- as.factor(fulldf$type)
 fulldf$spam <- as.factor(fulldf$spam)
 
 write.arff(fulldf, "reviewSpamData.arff")
+write.csv(fulldf, "reviewSpamData.csv",row.names = FALSE)
