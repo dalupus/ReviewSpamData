@@ -2,6 +2,7 @@ library(utils)
 library(readr)
 library(dplyr)
 library(RWeka)
+library(stringr)
 
 # function to read all the files in a directory into a dataframe
 createDataFrame <- function(directory){
@@ -13,7 +14,7 @@ createDataFrame <- function(directory){
   setwd(wd)
   t<-do.call(rbind.data.frame, t)
   colnames(t) <- c("text")
-  t$text <- as.character(t$text)
+  t$text <- str_trim(as.character(t$text))
   t
 }
 
